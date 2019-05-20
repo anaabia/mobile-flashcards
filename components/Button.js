@@ -3,8 +3,9 @@ import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { white } from '../utils/colors';
 
 export const Button = ({style, children, onPress, styleText, disabled}) => {
+    const btnDisabled = disabled ? styles.btnDisabled : ''
     return (
-        <TouchableOpacity disabled={disabled} style={[styles.button, style]}
+        <TouchableOpacity disabled={disabled} style={[styles.button, style, btnDisabled]}
             onPress={onPress}>
             <Text style={[styles.btnText, styleText]}>{children}</Text>
         </TouchableOpacity>
@@ -27,6 +28,9 @@ const styles = StyleSheet.create({
         fontSize: 22,
         textAlign: 'center',
     },
+    btnDisabled: {
+        opacity: 0.5,
+    }
 })
 
 export default Button

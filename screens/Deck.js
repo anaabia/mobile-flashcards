@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { View, Text, StyleSheet } from 'react-native';
 import { white, gray, black } from '../utils/colors';
 import { formatIdTitle } from '../utils/helpers';
-import CoupleButton from '../components/CoupleButton';
+import DoubleButton from '../components/DoubleButton';
 
 class Deck extends Component {
     render() {
@@ -12,12 +12,10 @@ class Deck extends Component {
         return (
             <View style={styles.content}>
                 <View style={styles.box}>
-                    <Text style={styles.title}>
-                        {title}
-                    </Text>
+                    <Text style={styles.title}>{title}</Text>
                     <Text style={styles.questions}>{questions.length} cards</Text>
                 </View>
-                <CoupleButton
+                <DoubleButton
                     firstStyle={styles.newCard}
                     firstPress={() => this.props.navigation.navigate(
                         'NewQuestion',

@@ -21,12 +21,13 @@ class NewQuestion extends Component{
         addCardToDeck(title, { answer, question })
         this.props.navigation.goBack()
     }
-
+    
     render () {
+        const isDisabled = this.state.answer === '' || this.state.question === ''
         return (
             <KeyboardAvoidingView behavior='padding' style={styles.content}>
                 <TextInput 
-                    placeholder="Ex: What is a component? "
+                    placeholder="What is a component? "
                     style={styles.txtInput}
                     onChangeText={(text) => this.setState({ question: text})}
                     value={this.state.question}
@@ -38,7 +39,7 @@ class NewQuestion extends Component{
                     value={this.state.answer}
                 />
                     <View style={styles.box}>
-                        <Button style={styles.submit} onPress={this.submitQuestion}>
+                        <Button disabled={isDisabled}  style={styles.submit} onPress={this.submitQuestion}>
                             Submit
                         </Button>
                     </View>

@@ -14,8 +14,8 @@ class DeckList extends Component{
         const { dispatch } = this.props
     
         getDecks()
-          .then((decks) => 
-              dispatch(receiveDecks(decks))
+            .then((decks) => 
+                dispatch(receiveDecks(decks))
             )
     }
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Text, View, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
 import { white, gray, black } from '../utils/colors';
-import CoupleButton from '../components/CoupleButton';
+import DoubleButton from '../components/DoubleButton';
 
 class Result extends Component {
     render () {
@@ -19,7 +19,7 @@ class Result extends Component {
                     <Text style={styles.title}>{message}</Text>
                     <Text style={styles.pontuation}>{correctAnswer}/{total}</Text>
                 </View>
-                <CoupleButton
+                <DoubleButton
                     firstStyle={styles.defaultButton}
                     firstPress={() => this.props.navigation.pop(total)}
                     firstStyleText={styles.btnTextCard}

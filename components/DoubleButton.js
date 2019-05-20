@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { View, StyleSheet } from 'react-native';
-import Button from '../components/Button';
+import Button from './Button';
 
-const CoupleButton = ({ firstText, secondText, firstPress, secondPress, firstStyle, secondStyle, firstStyleText, secondStyleText }) => {
+const DoubleButton = ({ firstText, secondText, firstPress, secondPress, firstStyle, secondStyle, firstStyleText, secondStyleText }) => {
     return (
         <View style={styles.box}>
             <Button style={firstStyle} onPress={firstPress} styleText={firstStyleText}>
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default CoupleButton
+export default DoubleButton

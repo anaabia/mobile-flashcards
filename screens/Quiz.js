@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { white, gray, red, green, purple } from '../utils/colors';
 import Button from '../components/Button';
-import CoupleButton from '../components/CoupleButton';
+import DoubleButton from '../components/DoubleButton';
 
 class Quiz extends Component {
     state = {
@@ -57,7 +57,7 @@ class Quiz extends Component {
                             <Text style={styles.changeText}>{isQuestion ? 'Awswer' : 'Question'}</Text>
                         </TouchableOpacity>
                     </View>
-                    <CoupleButton
+                    <DoubleButton
                         firstStyle={styles.correct}
                         firstPress={() => this.nextQuestion(true)}
                         firstText='Correct'

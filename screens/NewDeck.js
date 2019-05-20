@@ -47,7 +47,6 @@ class NewQuestion extends Component {
         })
     }
     render() {
-        const styleButtom = this.state.disabled ? styles.submitDisabled : styles.submit
         return (
             <KeyboardAvoidingView behavior='padding' style={styles.content}>
                 <Text style={styles.title}> What is the title </Text>
@@ -59,7 +58,7 @@ class NewQuestion extends Component {
                     value={this.state.deck}
                 />
                 <View style={styles.box}>
-                    <Button disabled={this.state.disabled} style={styleButtom} onPress={() => this.saveDeck()} >
+                    <Button disabled={this.state.disabled} style={styles.submit} onPress={() => this.saveDeck()} >
                      Submit
                     </Button>
                 </View>
@@ -93,11 +92,7 @@ const styles = StyleSheet.create({
     },
     submit: {
         backgroundColor: black,
-    },
-    submitDisabled: {
-        opacity: 0.5,
-        backgroundColor: black,
-    },
+    }
 })
 
 const mapStateToProps = ({ decks }) => {
