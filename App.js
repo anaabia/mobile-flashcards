@@ -1,10 +1,10 @@
 import React from 'react'
-import { View, Platform, StatusBar } from 'react-native'
+import { View, StatusBar, HeaderBackButton } from 'react-native'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers'
 import { TabNavigator, StackNavigator } from 'react-navigation'
-import { purple, white, black, gray } from './utils/colors'
+import { white, black, gray } from './utils/colors'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import { Constants } from 'expo'
 import DeckList from './screens/DeckList';
@@ -88,12 +88,11 @@ const MainNavigator = StackNavigator({
     }
   }
 },{
-  navigationOptions: {
-    headerTintColor: white,
-    headerStyle: {
-      backgroundColor: black,
-    }
-  }
+  navigationOptions
+})
+
+const navigationOptions = ({ navigation }) => ({
+  headerLeft: <HeaderBackButton onPress={() => navigation.goBack(null)} />,
 })
 
 export default class App extends React.Component {
